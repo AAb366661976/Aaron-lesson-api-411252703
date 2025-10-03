@@ -1,5 +1,5 @@
 # save this as app.py
-from flask import Flask
+from flask import Flask,render_template
 
 app = Flask(__name__)
 @app.route("/")
@@ -31,17 +31,16 @@ def show_appinfo():
 
 @app.route("/htmlinfo")
 def show_htmlinfo():
-    return """
-    <html>
-        <head>
-            <title>HTML INFO</title>
-        </head>
-        <body>
-            <h1>HTML INFO</h1>
-            <p>This is a paragraph.</p>
-        </body>
-    </html>
-    """
+    return render_template('home.html',text="bella")
+
+@app.route("/appinfo/appinfo")
+def Appinfo():
+    appio={
+    "app_id":"25.1001",
+    "app_name":"Flask",
+}
+    return render_template('appinfo.html',Appinfo=appio)
+
 
 if __name__ == "__main__":
     app.run('0.0.0.0',debug=True)
