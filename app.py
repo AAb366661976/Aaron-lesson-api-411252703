@@ -9,3 +9,7 @@ def home():
 @app.route("/hola")
 def hola():
     return "Hola, Mundo!"
+
+if __name__ == "__main__":
+    app.run(debug=True)
+    
