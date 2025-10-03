@@ -34,12 +34,12 @@ def show_htmlinfo():
     return render_template('home.html',text="bella")
 
 @app.route("/appinfo/appinfo")
-def Appinfo():
+def AppInfo():
     appio={
     "app_id":"25.1001",
-    "app_name":"Flask",
+    "app_name":"Flask"
 }
-    return render_template('appinfo.html',Appinfo=appio)
+    return render_template('home.html',AppInfo=appio)
 
 
 if __name__ == "__main__":
